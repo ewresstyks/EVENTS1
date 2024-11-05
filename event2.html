@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse</title>
+    <style>
+        #trackingDiv {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightgrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        #output {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="trackingDiv">
+        <div id="output">Move your mouse -- </div>
+    </div>
+
+    <script>
+        const trackingDiv = document.getElementById('trackingDiv');
+        const output = document.getElementById('output');
+
+        trackingDiv.addEventListener('mousemove', function(event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            output.textContent = `X = ${x}, Y = ${y}`;
+        });
+
+        trackingDiv.addEventListener('click', function(event) {
+            let button = '';
+            switch (event.button) {
+                case 0:
+                    button = 'Left button --';
+                    break;
+                case 1:
+                    button = 'Middle button --';
+                    break;
+                case 2:
+                    button = 'Right button --';
+                    break;
+            }
+            output.textContent += ` | Clicked: ${button}`;
+        });
+    </script>
+</body>
+</html>

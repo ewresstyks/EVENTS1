@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Random num</h1>
+    <button id="generateBtn">Generate</button>
+    <div id="output"></div>
+    <style>
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+
+     <script>
+      document.getElementById('generateBtn').addEventListener('click', function () {
+            let max = 101; 
+            let rand = Math.floor(Math.random() * max);
+            document.getElementById("output").innerHTML = rand; })
+
+    </script>
+</body>
+
+</html>
